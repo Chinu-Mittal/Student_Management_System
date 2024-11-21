@@ -1,0 +1,54 @@
+
+<html>
+<head>
+<script>
+function validateform(){
+	var meritRank=document.getElementById('meritRank').value;
+	validatemeritRank(meritRank);
+}
+function validatemeritRank(meritRank){
+	if(meritRank>=1 && meritRank<=100){
+		document.write('<body style="font-size:30px;" align="center" >You are eligible to get addmission in Computer Science engineering<br>To know about Computer science Engineering <a href="https://nirmauni.ac.in/">click here</a></body>');
+	}
+
+	else if(meritRank>100 && meritRank<=500){
+
+		document.write('<body style="font-size:30px;" align="center"  >You are eligible to get addmission in EC engineering.<br>To know about EC Engineering <a href="https://nirmauni.ac.in/">click here</a></body>');
+	}
+
+	else if(meritRank>500 && meritRank<=900){
+
+		document.write('<body style="font-size:30px;" align="center"  >You are eligible to get addmission in Mechenical engineering.<br>To know about Mechinical Engineering <a href="https://nirmauni.ac.in/">click here</a></body>');
+	}
+
+	else if(meritRank>900 && meritRank<=1000){
+		document.write('<body style="font-size:30px;" align="center" >You are eligible to get addmission in Civil engineering.<br>To know about Civil Engineering <a href="https://nirmauni.ac.in/">click here</a></body>');
+	}
+
+	else if(meritRank>1000 && meritRank<=1500){
+
+		document.write('<body style="font-size:30px;" align="center"  >You are eligible to get addmission in Chemical engineering.<br>To know about Chemical Engineering <a href="https://nirmauni.ac.in/">click here</a></body>');
+	}
+
+}
+</script>
+<style>
+        body {
+            background: url(texture.avif) no-repeat center center fixed;
+            background-size: 100% 100%;
+        }
+    </style>
+</head>
+<form onsubmit=" return validateform()">
+	
+		<center><td style="font-family:Georgia,serif"><h1>MERIT FORM</h1><br><br></td>
+		<td style="font-size:20px;"><b>Merit rank</b></td>
+		<td><input type="text" id="meritRank"></td><br><br><br>
+		<td><input type="submit" value="submit"></td>
+		<td><input type="reset" value="reset"></td><br></center>
+	
+</form>
+</table>
+<div id="result"></div>
+</body>
+</html>

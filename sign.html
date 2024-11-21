@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+  <div class="container">
+    <fieldset>
+      <h1>Log In</h1>
+      <input type="text" name="name" id="name" placeholder="Enter Your Name" required><br><br>
+      <input type="email" name="email" id="email" placeholder="Enter Your Email" required><br><br>
+      <input type="password" name="password" id="password" placeholder="Enter Your Password" required><br><br>
+      <input type="button" value="Sign In" onclick="validate()">
+      <input type="button" value="Register" onclick="window.location.href='regiss.html'">
+    </fieldset>
+  </div>
+
+  <script>
+    function validateEmail(email) {
+      var re = /^[^\s@]+@gmail\.com$/;
+      return re.test(email);
+    }
+    
+    function validate() {
+      var name = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+      var password = document.getElementById("password").value;
+
+      if (name.trim() === "") {
+        alert("Please enter your name");
+        return false;
+      }
+
+      if (!validateEmail(email)) {
+        alert("Invalid email address.");
+        return false;
+      }
+
+      if (password.length < 8) {
+        alert("Please enter a strong password (at least 8 characters)");
+        return false;
+      }
+
+      alert("Logged in successfully!");
+      window.location.href = 'amazon.html';
+    }
+  </script>
+</body>
+</html>

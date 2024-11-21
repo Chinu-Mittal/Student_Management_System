@@ -1,0 +1,47 @@
+body {
+    background: url(texture.avif) no-repeat center center fixed;
+    background-size: 100% 100%;
+}
+
+#que{
+    width: 60%;
+}
+.btn{
+    background: white;
+    color: black;
+    font-weight: 500;
+    width: 30%;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px 0;
+    text-align: center;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: block;
+}
+.btn:hover:not([disabled]){
+    background: black;
+    color: white;
+}
+.btn:disabled{
+    cursor: no-drop;
+}
+#next{
+    background: black;
+    color: white;
+    font-weight: 500;
+    width: 150px;
+    border: 0;
+    padding: 10px;
+    margin: 20px auto 0;
+    border-radius: 4px;
+    cursor: pointer;
+    display: none;
+}
+.incorrect{
+    background: rgb(222, 120, 120);
+}
+.correct{
+    background: rgb(118, 199, 118);
+}

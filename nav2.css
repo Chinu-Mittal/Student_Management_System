@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  color: white;
+  background-color:grey ;
+}
+
+li a {
+  display: block;
+  color: white;
+  padding: 29px 12px;
+  text-decoration: none;
+  border-color:black
+}
+
+/* Change the link color on hover */
+li a:hover {
+  color: black;
+}

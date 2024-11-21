@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Register</h1>
+        <div class="box">
+            <input type="text" name="name" id="name" placeholder="Enter Your Name" required>
+        </div>
+        <div class="box">
+          <input type="email" name="email" id="email" placeholder="Enter Your Email" required>
+        </div>
+        <div class="box">
+          <input type="password" name="password" id="password" placeholder="Create Password" required>
+        </div>
+        <div class="box">
+            <input type="password" name="confirm" id="confirm" placeholder="Confirm password" required>
+        </div>
+        <button class="btn" onclick="return validateForm()">Sign Up</button>
+      </div>
+      <script>
+function validateEmail(email) {
+    // Regular expression for email validation
+    var re = /^[^\s@]+@nirmauni.ac.in/;
+    return re.test(email);
+}
+
+
+        function validateForm() {
+            var name = document.getElementById("name").value;
+            var mail = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            var confirm = document.getElementById("confirm").value;
+
+            if (name.trim() === "") {
+                alert("Please enter your name");
+                return false;
+            }
+
+            if (validateEmail(mail)==false) 
+             {
+               alert("Invalid email address.");
+               return false;
+             } 
+
+             if ((password.toString().length) < 8)
+             {
+             alert("Please enter a strong password");
+              return false;
+               }
+
+            if (password != confirm) {
+                alert("Password do not match!");
+                return false;
+            }
+
+            alert("Registration successful!");
+            location.href='courses.html';
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quiz Performance</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+ <style>
+        body {
+            background: url(texture.avif) no-repeat center center fixed;
+            background-size: 100% 100%;
+        }
+
+        .f {
+            font-size: large;
+        }
+    </style>
+</head>
+
+<body>
+ <center> <h1>Review Of Your Performance</h1></center>
+  <div align="center">
+  <form id="quizForm">
+   QUIZ 1 <input type="number" id="quiz1" name="quiz1" min="0" max="20"><br><br>
+   QUIZ 2<input type="number" id="quiz2" name="quiz2" min="0" max="20"><br><br>
+   QUIZ 3 <input type="number" id="quiz3" name="quiz3" min="0" max="20"><br><br>
+   QUIZ 4<input type="number" id="quiz4" name="quiz4" min="0" max="20"><br><br>
+   QUIZ 5<input type="number" id="quiz5" name="quiz5" min="0" max="20"><br><br>
+    <input type="submit" value="Submit">
+  </form>
+
+  <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+ </div>
+
+<center> <h1>Keep Improving</h1></center>
+  <script>
+    document.getElementById("quizForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      
+      
+      var quiz1 = parseInt(document.getElementById("quiz1").value);
+      var quiz2 = parseInt(document.getElementById("quiz2").value);
+      var quiz3 = parseInt(document.getElementById("quiz3").value);
+      var quiz4 = parseInt(document.getElementById("quiz4").value);
+      var quiz5 = parseInt(document.getElementById("quiz5").value);
+      
+     
+      updateChart([quiz1, quiz2, quiz3, quiz4, quiz5]);
+    });
+
+    function updateChart(data) {
+      const xValues = ["Quiz 1", "Quiz 2", "Quiz 3", "Quiz 4", "Quiz 5"];
+      const yValues = data;
+
+      new Chart("myChart", {
+        type: "line",
+        data: {
+          labels: xValues,
+          datasets: [{
+            fill: false,
+            lineTension: 0,
+            backgroundColor: "rgba(0,0,260,2.0)",
+            borderColor: "rgba(0,0,255,0.6)",
+            data: yValues
+          }]
+        },
+        options: {
+          title: {
+            display: true,
+            text: 'Quiz Performance'
+          },
+          legend: { display: false },
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: true 
+              }
+            }]
+          }
+        }
+      });
+    }
+  </script>
+</body>
+</html>

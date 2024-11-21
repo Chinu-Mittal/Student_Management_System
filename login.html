@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Log In</h1>
+    <div class="box">
+      <input type="email" name="email" id="email" placeholder="Enter Your Email" required>
+    </div>
+    <div class="box">
+      <input type="password" name="password" id="password" placeholder="Enter Your Password" required>
+    </div>
+    <button class="btn" onclick="return validate()">Sign In</button>
+    <div>
+      <button class="btn" onclick="location.href='register.html';">Create Account</button>
+    </div>
+  </div>
+  <script>
+    function validateEmail(email) {
+      // Regular expression for email validation
+      var re = /^[^\s@]+@gmail.com/;
+      return re.test(email);
+    }
+    function validate() {
+      var mail = document.getElementById("email").value;
+      var password = document.getElementById('password').value;
+
+      if (validateEmail(mail) == false) {
+        alert("Invalid email address.");
+        return false;
+      }
+
+      if ((password.toString().length) < 8) {
+        alert("Please enter a strong password");
+        return false;
+      }
+
+      // else {
+      alert("Logged in successfully!");
+      location.href = 'courses.html';
+      // }
+    }
+
+  </script>
+</body>
+
+</html>
