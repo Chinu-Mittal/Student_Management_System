@@ -18,9 +18,6 @@ The Student Management System provides a user-friendly platform where students c
 4. [Illustrations](#illustrations)
 5. [Scope of Functionalities](#scope-of-functionalities)
 6. [Examples of Use](#examples-of-use)
-7. [Project Status](#project-status)
-8. [Sources](#sources)
-9. [Other Information](#other-information)
 
 ---
 
